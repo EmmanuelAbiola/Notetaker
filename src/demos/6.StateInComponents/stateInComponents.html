@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>React - Template</title>
+    <link rel ="stylesheet" type="text/css" href="../../css/main.css">
+    <script src="../../js/react.min.js"></script>
+    <script src="../../js/react-dom.min.js"></script>
+    <script src="../../js/browser.min.js"></script>
+
+</head>
+<body>
+
+    <div id="container"></div>
+
+    <script type="text/babel">
+        /* component starts here */
+        var Comment  = React.createClass({
+          getInitialState : function(){
+            return {editing : false}
+          },
+          /*Event handling is creating custom functions within a component and call them
+            with e.g. onClick   */
+          edit : function(){
+            this.setState({editing : true});
+          },
+          remove : function(){
+            console.log('Removing comment');
+          },
+          save : function(){
+            this.setState({editing : false});
+          },
+          //will display normal state
+          renderNormal : function(){
+            return (
+              <div className = "commentContainer">
+              {/*To pass data inbetween e.g. Comment tag, you can access it from
+                props.children*/ }
+                  <div className = "commentText"> {this.props.children}</div>
+                  <button onClick = {this.edit} className = "button-primary">Edit</button>
+                  <button onClick = {this.remove} className = "button-danger">Remove</button>
+            </div>
+            );
+          },
+          renderForm : function(){
+            return (
+              <div className = "commentContainer">
+              {/*To pass data inbetween e.g. Comment tag, you can access it from
+                props.children*/ }
+                <div className = "commentText"> {this.props.children}</div>
+                <textarea defaultValue={this.props.children}></textarea>
+                  <button onClick = {this.save} className = "button-success">Save</button>
+            </div>
+            );
+          },
+          render: function(){
+            if(this.state.editing){
+              return this.renderForm();
+            }else{
+              return this.renderNormal();
+            }
+          }
+        });
+        ReactDOM.render(
+          <div className = "board">
+          <Comment>Wish it was sunny every day</Comment>
+          <Comment>I like the weather outside </Comment>
+          <Comment>When it rains it pours </Comment>
+          </div>,
+          document.getElementById('container'));
+    </script>
+
+</body>
+</html>
