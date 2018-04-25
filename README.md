@@ -2,14 +2,13 @@ React boilerplate thenewboston tutorials.
 
 ## Getting started
 
-### Setting up Gulp (optional)
-
-You can also use Gulp to add additional build tasks. To use, follow the instructions below.
-
 Navigate to the root directory and  run the following command:
 ```
 > npm install
 ```
+### Setting up Gulp (optional)
+
+You can also use Gulp to add additional build tasks. To use, follow the instructions below.
 
 After modules are installed, you can start watching for SCSS changes using the command:
 ```
