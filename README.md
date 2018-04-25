@@ -1,4 +1,3 @@
-React boilerplate thenewboston tutorials.
 
 ## Getting started
 
