@@ -5,7 +5,7 @@ Navigate to the root directory and  run the following command:
 ```
 > npm install
 ```
-### Setting up Gulp (optional)
+### Setting up Gulp(optional)
 
 You can also use Gulp to add additional build tasks. To use, follow the instructions below.
 
